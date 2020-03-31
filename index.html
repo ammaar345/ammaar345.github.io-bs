@@ -1,71 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <link rel="stylesheet" href="bootstrap-grid.css">
+    <link rel="stylesheet" href="bootstrap-grid.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My portfolio</title>
+    
 </head>
 <style>
-  html,body{font-family: 'Courier New', Courier, monospace;}
+  html,body{font-family: 'Courier New', Courier, monospace;
+  background-color:red;}
+  .tab {
+        overflow: hidden;
+        border: 1px solid #8fb7a5;
+        background-color: crimson;
+    }
 
+    /* Style the buttons that are used to open the tab content */
+    .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        color: black;
+        font: 300 20px arial, sans-serif;
+    }
+
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+        background-color: white
+    }
+
+    /* Create an active/current tablink class */
+    .tab button.active {
+        background-color: white;
+    }
+
+    /* Style the tab content */
+    .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        
+        border-top: none;
+    }
     
-
+    .container{background-color: rgb(42, 90, 2);}
    
 </style>
 <body>
+  <div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'Home')">Home</button>	
+<button class="tablinks" onclick="openCity(event, 'About')">About</button>
+        <button class="tablinks" onclick="openCity(event, 'Github')">Github</button>
+<button class="tablinks" onclick="openCity(event, 'Frontend')">Frontend</button>
+	<button class="tablinks" onclick="openCity(event, 'Backend')">Backend</button>
+<button class="tablinks" onclick="openCity(event, 'CV')">CV</button>
+<button class="tablinks" onclick="openCity(event, 'Gameplay')">Gameplay</button>
+	</div>
     <div class="container">
         <div class="row">
-            <div class="col-auto image padding-right">
+            <div id="Home" class="tabcontent">
+            <u><h1>Muhammad Ammaar Fakir</h1></u>
+                <div class="col-auto ">
                 <img src="use.jpg" alt="No image found.">
             </div>
-            <div class="col-auto heading">
-                <h1>Ammaar</h1>
-                <h1>Fakir</h1>
-            </div>
-    
+        
+           
         </div>
-    <div class="row">
-        <h2>About me :</h2>
+        </div>
+        <div id="About" class="tabcontent">
+            
+        <div class="row">
+        <u><h1>About me :</h1></u>
     </div>
         <div class="row">
-            I'm a very enthusiastic person at times , enjoy helping people and enjoy socialising . Although I enjoy
-            socialising , sometimes it can be overwhelming. I'm new to coding , although I'm not bad at it , I still
-            struggle sometimes , only because I'm human. I can code basic functions , create basic webpages as well as test if functions are doing what they are supposed to .
-            I would say I am good at problem solving , and think pretty quickly in solving problems.
-    
+          <ul>
+         <li>   I'm a very enthusiastic person at times , enjoy helping people and enjoy socialising.</li>
+            <li>  Although I enjoy socialising , sometimes it can be overwhelming.</li>
+       <li>        I'm new to coding , although I'm not bad at it , I still
+            struggle sometimes.</li> 
+            <li>I can code basic functions , create basic webpages as well as test if functions are doing what they are supposed to .</li>
+          <li>  I would say I am good at problem solving , and think pretty quickly in solving problems.</li>
+    </ul>
     
         </div>
-    <div class="row">
-    <h2>Below is the link to my Git Hub Profile:</h2>
+        </div>
+        <div id="Github" class="tabcontent">
+            
+        <div class="row">
+   <u> <h1>Below is the link to my Git Hub Profile:</h1></u>
     
     </div>
     <div class="row">
         <a  href="https://github.com/ammaar345" target="blank_">https://github.com/ammaar345 </a>
     </div>
+        </div>
+        <div id="Frontend" class="tabcontent">
+            
     <div class="row"> 
-        <h2>These are links to projects I recently created:</h2>
+       <u> <h1>Here is the link to my basic webpage that I recently created:</h1></u>
     </div>
-        <div class="row"><UL>
-        <li>My basic Webpage : <a href="https://ammaar345.github.io/basic-webpage/">https://ammaar345.github.io/basic-webpage/</a></li>
-        <li>My boot-camp test units :  <a href="https://ammaar345.github.io/bootcamp-tests/">https://ammaar345.github.io/bootcamp-tests/</a> </li>
-    </UL>
-</div>
-   
+        <div class="row">
+       My basic Webpage website: <a href="https://ammaar345.github.io/basic-webpage/">https://ammaar345.github.io/basic-webpage/</a>
+       </div>
+    </div>
     <div class="row">
-    <H2>Here is the link to my CV :</H2> 
+    <div id="Backend" class="tabcontent">
+        
+       <u><h1>Here is the link to my basic webpage that I recently created:</h1></u>
+  My boot-camp test units website :<a href="https://ammaar345.github.io/bootcamp-tests/">https://ammaar345.github.io/bootcamp-tests/</a> 
+</div>
+</div>
+    <div id="CV" class="tabcontent">
+        
+    <div class="row">
+  <u>  <h1>Here is the link to my CV :</h1> </u>
     </div>
     <div class="row">
     <a href="CV.html" target="blank_">Click here. </a>
 </div>
-    
+    </div>
+    <div id="Gameplay" class="tabcontent">
+       
     <div class="row">
-        <h2>Lastly , here is a link to a page of interesting videos of my gameplay :</h2>
+       <u> <h1>Lastly , here is a link to a page of interesting videos of my gameplay :</h1></u>
         
     </div>
    <div class="row">
     <a href="useful-links.html" target="blank_">Click here to view Ammaars page.</a>
 </div>
     </div>   
+    <script type="text/javascript">
+		function openCity(evt, cityName) {
+		    // Declare all variables
+		    var i, tabcontent, tablinks;
+
+		    // Get all elements with class="tabcontent" and hide them
+		    tabcontent = document.getElementsByClassName("tabcontent");
+		    for (i = 0; i < tabcontent.length; i++) {
+		        tabcontent[i].style.display = "none";
+		    }
+
+		    // Get all elements with class="tablinks" and remove the class "active"
+		    tablinks = document.getElementsByClassName("tablinks");
+		    for (i = 0; i < tablinks.length; i++) {
+		        tablinks[i].className = tablinks[i].className.replace(" active", "");
+		    }
+
+		    // Show the current tab, and add an "active" class to the button that opened the tab
+		    document.getElementById(cityName).style.display = "block";
+		    evt.currentTarget.className += " active";
+		}
+	</script>
 </body>
 </html>
